@@ -23,9 +23,9 @@ function Signin() {
     e.preventDefault();
     Axios.post(url, {
       username: data.username,
-      email:"umar@gmail.com",
+      email: "harsh@gmail.com",
       password: data.password,
-      company: "",
+      company: "microsoft",
 
 
     }).then((res) => {
