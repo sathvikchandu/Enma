@@ -1,0 +1,58 @@
+body {
+    height: 110vh;
+    background-image: url(./../../images/Project\ 17_5.png);
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+.signin_title {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.797);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 1rem;
+    padding: 0;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -5%);
+}
+
+.signin_container {
+    border-radius: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1.5 / 1;
+    min-height: 35rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+    display: flex;
+    justify-content: center;
+}
+
+.signin_inputs {
+    box-shadow: 1rem 1rem 5rem ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(158,158,158,0.8);
+    backdrop-filter: saturate(180%) blur(50px);
+    aspect-ratio: 4/3;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin_fields {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+    align-items: center;
+    padding: 0;
+    width: 80%;
+}
