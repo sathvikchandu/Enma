@@ -2,16 +2,17 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import DevDashboard from "../Client/ClientDashboard";
 
-function Devsignin() {
+function Signin() {
   const navigate = useNavigate();
-  const [Signindata, setSignindata] = useState([{}])
   const url = "http://localhost:8000/user/developer";
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-  
+
+  const [signindata, setsignindata] = useState([{}])
 
   function handle(e) {
     const newdata = { ...data };
@@ -25,22 +26,26 @@ function Devsignin() {
     e.preventDefault();
     Axios.post(url, {
       email: data.email,
-    
       password: data.password,
-      
-
-
     }).then((res) => {
       console.log("hello");
       
       if (res.data.status==='ok'){
-        setSignindata(res.data.data);
-        console.log(res.data.data);
+        setsignindata(res.data.data);
+        alert("Login Successful");
+        localStorage.setItem("user", JSON.stringify(res.data.data));
+        <DevDashboard data={res.data.data} />
         navigate("/devdashboard");
+      }
+
+      else {
+        alert("Login Failed, check your credentials");
+        navigate("/Whoru");
       }
 
     });
   }
+  
 
   return (
     <div className="signin_page">
@@ -52,7 +57,7 @@ function Devsignin() {
       </div>
       <form onSubmit={(e) => submit(e)}>
         <div className="signin_container">
-        <div className="select m-2">
+          <div className="select m-2">
             <select
               className="form-select select-form"
               aria-label="Default select example"
@@ -61,12 +66,9 @@ function Devsignin() {
               
             </select>
           </div>
-          <div className="select m-2">
-            
-          </div>
           <div className="signin_inputs">
             <div className="signin_fields m-4">
-              <label>Email</label>
+              <label>email</label>
               <input
                 onChange={(e) => handle(e)}
                 id="email"
@@ -90,9 +92,16 @@ function Devsignin() {
               >
                 Submit
               </button>
-              
-                
-            
+              <div className="m-2">
+                <label className="m-2">New User?</label>
+                <button
+                  type="button"
+                  className="btn btn-primary p-0 m-0"
+                  onClick={() => navigate("/signup_support")}
+                >
+                  Signup
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -101,4 +110,4 @@ function Devsignin() {
   );
 }
 
-export default Devsignin;
+export default Signin;

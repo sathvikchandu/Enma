@@ -1,16 +1,18 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ClientDashboard from "../Client/ClientDashboard";
 import "./Signin.css";
 function Signin() {
   const navigate = useNavigate();
   const url = "http://localhost:8000/user/client";
   const [data, setData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
-  const [signindata, setSigninData] = useState([{}])
+
+  const [signindata, setsignindata] = useState([{}])
 
   function handle(e) {
     const newdata = { ...data };
@@ -23,23 +25,26 @@ function Signin() {
     
     e.preventDefault();
     Axios.post(url, {
-      username: data.username,
-      email: "harsh@gmail.com",
+      email: data.email,
       password: data.password,
-      company: "microsoft",
-
-
     }).then((res) => {
       console.log("hello");
-      setSigninData(res.data);
-      console.log(res.data);
+      
       if (res.data.status==='ok'){
-        setSigninData(res.data.data);
+        setsignindata(res.data.data);
+        alert("Login Successful");
+        localStorage.setItem("user", JSON.stringify(res.data.data));
+        <ClientDashboard data={res.data.data} />
         navigate("/clientdashboard");
       }
+
+      else {
+        alert("Login Failed, check your credentials");
+        navigate("/Whoru");
+      }
+
     });
   }
-
   
 
   return (
@@ -58,17 +63,18 @@ function Signin() {
               aria-label="Default select example"
             >
               <option selected>Client</option>
-              
+              <option value="1">Project manager</option>
+              <option value="2">Developer</option>
             </select>
           </div>
           <div className="signin_inputs">
             <div className="signin_fields m-4">
-              <label>Username</label>
+              <label>email</label>
               <input
                 onChange={(e) => handle(e)}
-                id="username"
-                value={data.username}
-                placeholder="Enter Username"
+                id="email"
+                value={data.email}
+                placeholder="Enter email"
                 type="text"
                 className="m-3 mt-0"
               />

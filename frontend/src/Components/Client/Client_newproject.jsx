@@ -8,12 +8,13 @@ function Client_newproject() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+  const res= JSON.parse(localStorage.getItem("user"))
 
   const handleSubmit = (e) => {
     Axios.post("http://localhost:8000/project_create", {
       name: title,
       description: description,
-      client_id: 1,
+      client_id: res.id,
       
       
     });

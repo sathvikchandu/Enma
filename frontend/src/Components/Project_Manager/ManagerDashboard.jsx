@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./ManagerDashboard.css";
 
 function ManagerDashboard() {
   const navigate = useNavigate();
@@ -7,26 +8,19 @@ function ManagerDashboard() {
     <div className="review_body">
       <div class="navBar">
         <ul className="header_ul">
-          <h1 className="manager">Manager Dashboard</h1>
           <li>
-            <div className="dropdown">
-              <span className="header_li">
-                <p>Home</p>{" "}
-              </span>
+            <div className="header_li">
+              <p>Home</p>
             </div>
           </li>
           <li>
-            <div className="dropdown">
-              <span className="header_li">
-                <p>About</p>{" "}
-              </span>
+            <div className="header_li">
+              <p>About</p>
             </div>
           </li>
           <li>
-            <div className="dropdown">
-              <span className="header_li">
-                <p>Contact Us</p>{" "}
-              </span>
+            <div className="header_li">
+              <p>Contact Us</p>
             </div>
           </li>
           <li>
@@ -43,334 +37,45 @@ function ManagerDashboard() {
             </span>
           </li>
           <li>
-            <div className="dropdown p-3">
-              <span className="header_li">
-                <p>Profile</p>{" "}
-              </span>
+            <div className="header_li p-3">
+              <button onClick={()=>navigate("/managerprofile")}>Profile</button>
             </div>
           </li>
         </ul>
       </div>
 
-      <div className="cards p-5">
-        <div className="card m-3 ">
-          <div class="card-body">
-            <h5 class="card-title">Project-1</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div>
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample"
-                  aria-controls="offcanvasExample"
-                >
-                  Check status
-                </button>
-              </p>
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Offcanvas
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                    >
-                      Dropdown button
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>Action</li>
-                      <li>Another action</li>
-                      <li>Something else here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="manager_container">
+        <div className="client_number">
+          <h3>Current Clients:</h3>
+          <h1>13</h1>
         </div>
-        <div className="card m-3">
-          <div class="card-body">
-            <h5 class="card-title">Project-2</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div>
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample"
-                  aria-controls="offcanvasExample"
-                >
-                  Check status
-                </button>
-              </p>
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Offcanvas
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                    >
-                      Dropdown button
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>Action</li>
-                      <li>Another action</li>
-                      <li>Something else here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="client_number">
+          <h3>Current Clients request:</h3>
+          <h1>5</h1>
+          <button className="btn btn-primary request_btn">Review</button>
         </div>
-        <div className="card m-3">
-          <div class="card-body">
-            <h5 class="card-title">Project-3</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div>
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample"
-                  aria-controls="offcanvasExample"
-                >
-                  Check status
-                </button>
-              </p>
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Offcanvas
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                    >
-                      Dropdown button
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>Action</li>
-                      <li>Another action</li>
-                      <li>Something else here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="client_number projects">
+          <h3>Current projects:</h3>
+          <div className="projects_content">
+            <h1>5</h1>
+            <button
+              className="btn btn-primary"
+              onClick={() => navigate("/reviewprojects")}
+            >
+              review
+            </button>
           </div>
-        </div>
-        <div className="card m-3">
-          <div class="card-body">
-            <h5 class="card-title">Project-4</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div>
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasExample"
-                  aria-controls="offcanvasExample"
-                >
-                  Check status
-                </button>
-              </p>
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Offcanvas
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                    >
-                      Dropdown button
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>Action</li>
-                      <li>Another action</li>
-                      <li>Something else here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="card m-3">
-          <div class="card-body">
-            <h5 class="card-title">Project-5</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-
-            <p>
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample"
-              >
-                Check status
-              </button>
-            </p>
-            <div>
-              <div
-                class="offcanvas offcanvas-start"
-                tabindex="-1"
-                id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel"
-              >
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    Offcanvas
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close text-reset"
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the
-                    elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                    >
-                      Dropdown button
-                    </button>
-                    <ul
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>Action</li>
-                      <li>Another action</li>
-                      <li>Something else here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+          <h3>Overall Progress:</h3>
+          <br />
+          <div class="progress">
+            <div
+              class="progress-bar w-75"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              75%
             </div>
           </div>
         </div>

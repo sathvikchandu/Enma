@@ -1,0 +1,38 @@
+.manager_container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: saturate(180%) blur(10px);
+    margin: 1vw;
+    border-radius: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.client_number {
+    background: rgba(193, 182, 182, 0.8);
+    backdrop-filter: saturate(180%) blur(10px);
+    height: auto;
+    margin: 1rem;
+    width: 45vw;
+    text-align: center;
+    border-radius: 1rem;
+    
+}
+
+.projects {
+    width: 90vw;
+    text-align: left;
+    padding: 1rem;
+}
+
+.request_btn {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+
+.projects_content {
+    display: flex;
+    align-items: center;
+}

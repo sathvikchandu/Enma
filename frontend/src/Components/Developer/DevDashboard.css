@@ -3,3 +3,8 @@
     flex-direction:column;
     justify-content:space-between;
 }
+
+.review_btns {
+    display: flex;
+    justify-content: space-between;
+}

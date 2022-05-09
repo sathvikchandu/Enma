@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
+
 function ClientDashboard() {
   const navigate = useNavigate();
-
+  
   return (
     <>
       <div>
@@ -19,11 +20,7 @@ function ClientDashboard() {
                 <p>About</p>
               </div>
             </li>
-            <li>
-              <div className="header_li">
-                <p>Achievement</p>
-              </div>
-            </li>
+            
             <li>
               <div className="header_li">
                 <p>Contact Us</p>
@@ -31,7 +28,19 @@ function ClientDashboard() {
             </li>
             <li>
               <div className="header_li">
-                <p>Profile</p>
+              
+             
+                <button onClick={()=>{
+                  navigate("/clientviewprofile")
+                }}>Profile</button>
+              </div>
+            </li>
+            <li>
+              <div className="header_li">
+                <button onClick={() => {
+                  localStorage.removeItem("user");
+                  navigate("/whoru");
+                }}> Signout</button>
               </div>
             </li>
           </ul>
