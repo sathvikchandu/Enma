@@ -14,8 +14,8 @@ function Client_newproject() {
       name: title,
       description: description,
       client_id: 1,
-      status: "status",
-      estimated_deadline: "2022-09-08",
+      
+      
     });
   };
 

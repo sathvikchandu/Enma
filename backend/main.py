@@ -32,6 +32,7 @@ origins = [
     "http://localhost:8000",
     "http://localhost:3000",
     "http://localhost:8080",
+    "http://127.0.0.1:3000",
 ]
 
 app.add_middleware(
@@ -45,17 +46,6 @@ app.add_middleware(
 
 def hash_passowrd(password):
     return hashlib.sha256(password.encode()).hexdigest()
-
-
-oath2_scheme = OAuth2PasswordBearer(tokenUrl='token')
-
-# password helper functions
-
-
-@app.post('/token')
-async def generate_token(request_form: OAuth2PasswordRequestForm = Depends()):
-    token = await token_generator(request_form.username, request_form.password)
-    return {'access_token': token, 'token_type': 'bearer'}
 
 
 @app.post('/client/create')
@@ -123,21 +113,6 @@ async def email_verification(request: Request, token: str):
     )
 
 
-async def get_current_user(token: str = Depends(oath2_scheme)):
-    try:
-        payload = jwt.decode(
-            token, config_credentials['SECRET'], algorithms=['HS256'])
-        user = await Client.get(id=payload.get("id"))
-    except:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid username or password",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-
-    return await user
-
-
 @app.post('/user/developer')
 async def developer_login(developer: developer_login):
     dev_info = developer.dict(exclude_unset=True)
@@ -151,8 +126,9 @@ async def developer_login(developer: developer_login):
             await dev_obj.save()
             return{
                 "status": "ok",
-                "data": f"Hello {dev_obj.name}, you are logged in.",
-                "id": dev_obj.id
+                "message": f"Hello {dev_obj.name}, you are logged in.",
+                "data": dev_obj
+
             }
         else:
             return{
@@ -171,7 +147,8 @@ async def pm_login(pm: projectmanager_login):
             await pm_obj.save()
             return{
                 "status": "ok",
-                "data": f"Hello {pm_obj.name}, you are logged in."
+                "message": f"Hello {pm_obj.name}, you are logged in.",
+                "data": pm_obj
             }
         else:
             return{
@@ -181,7 +158,7 @@ async def pm_login(pm: projectmanager_login):
 
 
 @app.post('/user/client')
-async def client_login(client: client_pydanticInput):
+async def client_login(client: client_login_pydantic):
     client_info = client.dict(exclude_unset=True)
     client_obj = await Client.get(email=client_info["email"])
     if client_obj:
@@ -190,7 +167,9 @@ async def client_login(client: client_pydanticInput):
             await client_obj.save()
             return{
                 "status": "ok",
-                "data": f"Hello {client_obj.username}, you are logged in."
+                "message": f"Hello {client_obj.username}, you are logged in.",
+                "data": client_obj.dict(exclude_unset=True)
+
             }
         else:
             return{
@@ -238,6 +217,14 @@ async def get_projects():
     }
 
 
+@app.get("/developers/not-assinged")
+async def get_developers():
+    response = await developer_pydantic.from_queryset(Developer.filter(is_assigned = "No"))
+    return {
+        "status": "ok",
+        "data": response
+    }
+
 @app.get("/projects-client/{id}")
 async def get_projects_client(id: int):
     response = await project_pydantic.from_queryset(Project.filter(client_id=id))
@@ -273,6 +260,8 @@ async def update_project_dev(id: int, project: project_pydanticUpdateClient):
         "data": response
     }
 
+
+@app.get("")
 @app.put("/assign-project/{id}")
 async def assign_project(id: int, developer: dev_project_assign):
     dev_obj = await Developer.get(id=id)
@@ -287,6 +276,7 @@ async def assign_project(id: int, developer: dev_project_assign):
         "data": response
     }
 
+
 @app.get("/developers")
 async def get_developers():
     response = await developer_pydantic.from_queryset(Developer.all())
@@ -294,6 +284,7 @@ async def get_developers():
         "status": "ok",
         "data": response
     }
+
 
 @app.get("/")
 def index():

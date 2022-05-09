@@ -53,10 +53,11 @@ class ProjectManager(Model):
 client_pydantic = pydantic_model_creator(Client,name = 'ClientPydantic',exclude = ('is_verified'))
 client_pydanticInput = pydantic_model_creator(Client,name = 'ClientInput',exclude_readonly=True,exclude = ('is_verified','join_date'))
 client_pydanticOutput = pydantic_model_creator(Client,name = 'ClientOutput',exclude = ('password','join_date'))
+client_login_pydantic = pydantic_model_creator(Client,name = 'ClientLoginPydantic',exclude = ('is_verified','join_date','company','username','id'))
 
 
 project_pydantic = pydantic_model_creator(Project,name = 'ProjectPydantic',exclude=('created_at','updated_at'))
-project_pydanticInput = pydantic_model_creator(Project,name = 'ProjectInput',exclude_readonly=True,exclude=('created_at','updated_at'))
+project_pydanticInput = pydantic_model_creator(Project,name = 'ProjectInput',exclude_readonly=True,exclude=('created_at','updated_at','estimated_deadline','status'))
 project_pydanticOutput = pydantic_model_creator(Project,name = 'ProjectOutput',exclude = ('id'))
 project_pydanticUpdateInput = pydantic_model_creator(Project,name = 'ProjectUpdateInput',exclude_readonly=True,exclude=('id','created_at','updated_at','client_id'))
 project_pydanticUpdateDev = pydantic_model_creator(Project,name = 'ProjectUpdateDev',exclude_readonly=True,exclude=('id','created_at','updated_at','client_id','name','description'))
@@ -64,7 +65,7 @@ project_pydanticUpdateClient = pydantic_model_creator(Project,name = 'ProjectUpd
 
 developer_pydantic = pydantic_model_creator(Developer,name = 'DeveloperPydantic',exclude=('is_verified','current_assigned_project_id','is_assigned'))
 developer_pydanticInput = pydantic_model_creator(Developer,name = 'DeveloperInput',exclude_readonly=True,exclude=('is_verified','current_assigned_project_id','join_date'))
-developer_login = pydantic_model_creator(Developer,name = 'DeveloperLogin',exclude = ('id','is_verified','current_assigned_project_id','join_date','company','specialization','name'))
+developer_login = pydantic_model_creator(Developer,name = 'DeveloperLogin',exclude = ('id','is_verified','current_assigned_project_id','join_date','company','specialization','name','is_assigned'))
 developer_pydanticOutput = pydantic_model_creator(Developer,name = 'DeveloperOutput',exclude = ('password','join_date'))
 dev_project_assign = pydantic_model_creator(Developer,name = 'DevProjectAssign',exclude = ('id','is_verified','name','email','password','join_date','company','specialization'))
 

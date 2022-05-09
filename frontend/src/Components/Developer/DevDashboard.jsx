@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import './DevDashboard.css'
+import Devsignin from "../login/Devsignin";
 function DevDashboard() {
   const navigate = useNavigate();
+  console.log(Signindata)
   return (
     <div className="review_body">
        <div className="General-navbar">
@@ -17,6 +18,7 @@ function DevDashboard() {
                   <button className="btn_nav" onClick={()=> navigate('/signup_support')}>SignOut</button>
 
               </div>
+              
 
             </ul>
             

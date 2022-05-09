@@ -1,16 +1,17 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Signin.css";
-function Signin() {
+
+function Devsignin() {
   const navigate = useNavigate();
-  const url = "http://localhost:8000/user/client";
+  const [Signindata, setSignindata] = useState([{}])
+  const url = "http://localhost:8000/user/developer";
   const [data, setData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
-  const [signindata, setSigninData] = useState([{}])
+  
 
   function handle(e) {
     const newdata = { ...data };
@@ -23,24 +24,23 @@ function Signin() {
     
     e.preventDefault();
     Axios.post(url, {
-      username: data.username,
-      email: "harsh@gmail.com",
+      email: data.email,
+    
       password: data.password,
-      company: "microsoft",
+      
 
 
     }).then((res) => {
       console.log("hello");
-      setSigninData(res.data);
-      console.log(res.data);
+      
       if (res.data.status==='ok'){
-        setSigninData(res.data.data);
-        navigate("/clientdashboard");
+        setSignindata(res.data.data);
+        console.log(res.data.data);
+        navigate("/devdashboard");
       }
+
     });
   }
-
-  
 
   return (
     <div className="signin_page">
@@ -52,23 +52,26 @@ function Signin() {
       </div>
       <form onSubmit={(e) => submit(e)}>
         <div className="signin_container">
-          <div className="select m-2">
+        <div className="select m-2">
             <select
               className="form-select select-form"
               aria-label="Default select example"
             >
-              <option selected>Client</option>
+              <option selected>Developer</option>
               
             </select>
           </div>
+          <div className="select m-2">
+            
+          </div>
           <div className="signin_inputs">
             <div className="signin_fields m-4">
-              <label>Username</label>
+              <label>Email</label>
               <input
                 onChange={(e) => handle(e)}
-                id="username"
-                value={data.username}
-                placeholder="Enter Username"
+                id="email"
+                value={data.email}
+                placeholder="Enter email"
                 type="text"
                 className="m-3 mt-0"
               />
@@ -87,16 +90,9 @@ function Signin() {
               >
                 Submit
               </button>
-              <div className="m-2">
-                <label className="m-2">New User?</label>
-                <button
-                  type="button"
-                  className="btn btn-primary p-0 m-0"
-                  onClick={() => navigate("/signup_support")}
-                >
-                  Signup
-                </button>
-              </div>
+              
+                
+            
             </div>
           </div>
         </div>
@@ -105,4 +101,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default Devsignin;
