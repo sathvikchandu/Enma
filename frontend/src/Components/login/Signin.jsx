@@ -63,8 +63,7 @@ function Signin() {
               aria-label="Default select example"
             >
               <option selected>Client</option>
-              <option value="1">Project manager</option>
-              <option value="2">Developer</option>
+              
             </select>
           </div>
           <div className="signin_inputs">

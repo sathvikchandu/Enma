@@ -9,8 +9,8 @@ function DevDashboard() {
         <ul className="header_ul">
           <li>
             <div className="header_li">
-              <p>Home</p>
-            </div>
+            <button className="btn p-0 text-light" onClick={() => navigate("/devdashboard")}
+>Home</button>            </div>
           </li>
           <li>
             <div className="header_li">
@@ -21,6 +21,14 @@ function DevDashboard() {
             <div className="header_li">
               <p>Contact Us</p>
             </div>
+          </li>
+          <li>
+          <div className="header_li">
+                <button onClick={() => {
+                  localStorage.removeItem("user");
+                  navigate("/whoru");
+                }}> Signout</button>
+              </div>
           </li>
           <li>
             <span>

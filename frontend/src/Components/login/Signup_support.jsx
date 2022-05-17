@@ -77,6 +77,7 @@ function Signupsupport() {
       password: values.password,
       company: values.company,
     }).then((res) => {
+      alert("signup successful");
       navigate("/signin");
     });
   };

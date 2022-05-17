@@ -43,6 +43,7 @@ body {
 
 
 .signup_container {
+    margin-top: 2rem;
     border-radius: 1rem;
     position: absolute;
     left: 50%;

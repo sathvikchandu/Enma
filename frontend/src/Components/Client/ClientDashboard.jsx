@@ -12,7 +12,8 @@ function ClientDashboard() {
           <ul className="header_ul">
             <li>
               <div className="header_li">
-                <p>Home</p>
+              <button className="btn p-0 text-light" onClick={() => navigate("/clientdashboard")}
+>Home</button>
               </div>
             </li>
             <li>
@@ -27,17 +28,17 @@ function ClientDashboard() {
               </div>
             </li>
             <li>
-              <div className="header_li">
+              <div className="header_li p-0">
               
              
-                <button onClick={()=>{
+                <button className="btn m-0 text-light" onClick={()=>{
                   navigate("/clientviewprofile")
                 }}>Profile</button>
               </div>
             </li>
             <li>
-              <div className="header_li">
-                <button onClick={() => {
+              <div className="header_li p-0">
+                <button className="btn m-0 text-light" onClick={() => {
                   localStorage.removeItem("user");
                   navigate("/whoru");
                 }}> Signout</button>
@@ -57,29 +58,7 @@ function ClientDashboard() {
               </button>
             </div>
             <p className="dummy">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-              maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quo maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.
+              You can add your project here
             </p>
           </div>
           <div className="content">
@@ -93,29 +72,7 @@ function ClientDashboard() {
               </button>
             </div>
             <p className="dummy">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-              maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quo maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.
+              You can review your project here
             </p>
           </div>
           <div className="content">
@@ -129,29 +86,7 @@ function ClientDashboard() {
               </button>
             </div>
             <p className="dummy">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-              maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quo maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.
+              You can view your projects history here
             </p>
           </div>
         </div>

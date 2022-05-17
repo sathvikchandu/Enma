@@ -10,7 +10,8 @@ function ManagerDashboard() {
         <ul className="header_ul">
           <li>
             <div className="header_li">
-              <p>Home</p>
+            <button className="btn p-0 text-light" onClick={() => navigate("/managerdashboard")}
+>Home</button>
             </div>
           </li>
           <li>
@@ -24,9 +25,9 @@ function ManagerDashboard() {
             </div>
           </li>
           <li>
-            <span>
+            <span className="p-0">
               <button
-                className="dev_btn position-relative"
+                className=" text-light position-relative"
                 onClick={() => navigate("/newprojects")}
               >
                 New Projects
@@ -38,8 +39,16 @@ function ManagerDashboard() {
           </li>
           <li>
             <div className="header_li p-3">
-              <button onClick={()=>navigate("/managerprofile")}>Profile</button>
+              <button className="btn m-0 text-light" onClick={()=>navigate("/managerprofile")}>Profile</button>
             </div>
+          </li>
+          <li>
+          <div className="header_li p-0">
+                <button className="btn text-light m-0" onClick={() => {
+                  localStorage.removeItem("user");
+                  navigate("/whoru");
+                }}> Signout</button>
+              </div>
           </li>
         </ul>
       </div>

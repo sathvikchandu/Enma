@@ -91,16 +91,7 @@ function Pmsignin() {
               >
                 Submit
               </button>
-              <div className="m-2">
-                <label className="m-2">New User?</label>
-                <button
-                  type="button"
-                  className="btn btn-primary p-0 m-0"
-                  onClick={() => navigate("/signup_support")}
-                >
-                  Signup
-                </button>
-              </div>
+              
             </div>
           </div>
         </div>

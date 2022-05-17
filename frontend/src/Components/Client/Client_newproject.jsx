@@ -15,9 +15,13 @@ function Client_newproject() {
       name: title,
       description: description,
       client_id: res.id,
+    }).then(res=>{
+      alert("data uploaded successfully")
+      navigate("/clientdashboard")
+    })
       
       
-    });
+    
   };
 
   return (

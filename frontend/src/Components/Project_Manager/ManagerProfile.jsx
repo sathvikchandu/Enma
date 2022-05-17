@@ -10,19 +10,22 @@ function ManagerProfile() {
       </button>
       <div className="signup_title">
         <h1>Profile</h1>
-
       </div>
       <div
-        className="App mx-auto "
+        className="App mx-auto"
         style={{ width: "400px", backgroundColor: "white", marginTop: "15px" }}
       >
-        <div className="signup_container mt-3">
+        <div className="signup_container">
           <div className="signup_inputs">
             <div className="add_project_inputs m-3 mb-0 w-50 add_project_container"></div>
-            <h3>ID:            {res.id}</h3>
-            <h3>User Name:     {res.username}</h3>
-            <h3>Email:         {res.email}</h3>
-            <h3>company:       {res.company}</h3>
+            <label>Username</label>
+            <input type="text" class="form-control w-50 m-0" placeholder={res.username} aria-label="Username" aria-describedby="basic-addon1" disabled/>
+            <br />
+            <label>E-mail</label>
+            <input type="text" class="form-control w-50 m-0" placeholder={res.email} aria-label="Username" aria-describedby="basic-addon1" disabled/>
+            <br />
+            <label>Companny</label>
+            <input type="text" class="form-control w-50 m-0" placeholder={res.company} aria-label="Username" aria-describedby="basic-addon1" disabled/>
            
     </div>
     </div>

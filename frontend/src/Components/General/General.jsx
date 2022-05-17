@@ -63,11 +63,12 @@ function General() {
             </div> */}
       <div className="body">
         <div class="navBar">
-          <h1>Enterprise management system</h1>
+          <h1 className="p-0">Enterprise management system</h1>
           <ul className="header_ul">
             <li>
               <div className="header_li">
-                <p>Home</p>
+                <button className="btn p-0 text-light" onClick={() => navigate("/")}
+>Home</button>
               </div>
             </li>
             <li>
@@ -124,34 +125,8 @@ We take this chance to also extend our gratitude towards our Partners who are al
 Our warmest and most special thanks to our team of extraordinary experts, who have passionately worked towards completing customer requests with the highest standards of dedication, punctuality, and reliability..
             </p>
           </div>
-          <div className="content">
-            <h1>Hello world</h1>
-            <p className="dummy">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
-              maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quo maxime quod recusandae laboriosam praesentium nesciunt
-              voluptatibus, nobis alias beatae exercitationem! Ab placeat
-              corporis nam consequuntur voluptas reiciendis provident tempore
-              enim?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Mollitia similique delectus vitae officiis ducimus explicabo
-              quisquam eum expedita. Accusantium magnam asperiores maxime labore
-              ratione iste minima tempora nam, ipsam ipsum. Lorem ipsum dolor
-              sit amet, consectetur adipisicing elit. Aperiam quasi amet itaque
-              assumenda facilis minima ullam rerum, delectus quas, nesciunt quae
-              veniam beatae modi reprehenderit ducimus facere dolorem culpa
-              natus.
-            </p>
-          </div>
+
+          
         </div>
       </div>
     </>
